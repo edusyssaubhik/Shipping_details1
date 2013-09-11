@@ -1,0 +1,819 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6DD71FAD-54B7-4BF9-B5FA-87E630883A2A}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Shipping_details1</RootNamespace>
+    <AssemblyName>Shipping_details1</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=3.5.40412.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Users\Saubhik\Desktop\AjaxControlToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="EDUsysVmqCrmIntegration, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\final_dll_crm\EDUsysVmqCrmIntegration.dll</HintPath>
+    </Reference>
+    <Reference Include="HtmlRenderer">
+      <HintPath>C:\Users\Saubhik\Desktop\HtmlRenderer.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp">
+      <HintPath>C:\Users\Saubhik\Desktop\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="microsoft.crm.sdk.proxy">
+      <HintPath>C:\Users\Saubhik\Desktop\microsoft.crm.sdk.proxy.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="microsoft.xrm.sdk, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\CRM part 2\microsoft.xrm.sdk.dll</HintPath>
+    </Reference>
+    <Reference Include="pdfcrowd">
+      <HintPath>C:\Users\Saubhik\Desktop\pdfcrowd.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Services" />
+    <Reference Include="System.IdentityModel" />
+    <Reference Include="System.IdentityModel.Selectors" />
+    <Reference Include="System.identitymodel.services" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.jQuery">
+      <HintPath>..\packages\AspNet.ScriptManager.jQuery.1.8.2\lib\net45\AspNet.ScriptManager.jQuery.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.jQuery.UI.Combined">
+      <HintPath>..\packages\AspNet.ScriptManager.jQuery.UI.Combined.1.9.2\lib\net45\AspNet.ScriptManager.jQuery.UI.Combined.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ScriptManager.MSAjax, Version=4.5.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\packages\Microsoft.AspNet.ScriptManager.MSAjax.4.5.6\lib\net45\Microsoft.ScriptManager.MSAjax.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ScriptManager.WebForms, Version=4.5.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\packages\Microsoft.AspNet.ScriptManager.WebForms.4.5.6\lib\net45\Microsoft.ScriptManager.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.0.0\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Providers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\packages\Microsoft.AspNet.Providers.Core.1.2\lib\net40\System.Web.Providers.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\DotNetOpenAuth.Core.4.1.4.12333\lib\net40-full\DotNetOpenAuth.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OAuth, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\DotNetOpenAuth.OAuth.Core.4.1.4.12333\lib\net40-full\DotNetOpenAuth.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OAuth.Consumer, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\DotNetOpenAuth.OAuth.Consumer.4.1.4.12333\lib\net40-full\DotNetOpenAuth.OAuth.Consumer.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OpenId, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\DotNetOpenAuth.OpenId.Core.4.1.4.12333\lib\net40-full\DotNetOpenAuth.OpenId.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.OpenId.RelyingParty, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\DotNetOpenAuth.OpenId.RelyingParty.4.1.4.12333\lib\net40-full\DotNetOpenAuth.OpenId.RelyingParty.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetOpenAuth.AspNet, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2780ccd10d57b246, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\DotNetOpenAuth.AspNet.4.1.4.12333\lib\net40-full\DotNetOpenAuth.AspNet.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Membership.OpenAuth, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\packages\Microsoft.AspNet.Membership.OpenAuth.1.0.1\lib\net45\Microsoft.AspNet.Membership.OpenAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Thumbnail, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\GitHub\ConvertHTMLPdf\Bin\Thumbnail.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.3.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.3.0\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Web.Optimization.WebForms">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.WebForms.1.0.0\lib\net45\Microsoft.AspNet.Web.Optimization.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.FriendlyUrls, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>..\packages\Microsoft.AspNet.FriendlyUrls.Core.1.0.0\lib\net45\Microsoft.AspNet.FriendlyUrls.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="aberdeen.asp" />
+    <Content Include="About.aspx" />
+    <Content Include="Account\Login.aspx" />
+    <Content Include="Account\Manage.aspx" />
+    <Content Include="Account\OpenAuthProviders.ascx" />
+    <Content Include="Account\Register.aspx" />
+    <Content Include="Account\RegisterExternalLogin.aspx" />
+    <Content Include="addeditviewquote2.asp" />
+    <Content Include="call_crm8.aspx" />
+    <Content Include="Contact.aspx" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\jquery-ui.css" />
+    <Content Include="Content\themes\base\jquery.ui.accordion.css" />
+    <Content Include="Content\themes\base\jquery.ui.all.css" />
+    <Content Include="Content\themes\base\jquery.ui.autocomplete.css" />
+    <Content Include="Content\themes\base\jquery.ui.base.css" />
+    <Content Include="Content\themes\base\jquery.ui.button.css" />
+    <Content Include="Content\themes\base\jquery.ui.core.css" />
+    <Content Include="Content\themes\base\jquery.ui.datepicker.css" />
+    <Content Include="Content\themes\base\jquery.ui.dialog.css" />
+    <Content Include="Content\themes\base\jquery.ui.menu.css" />
+    <Content Include="Content\themes\base\jquery.ui.progressbar.css" />
+    <Content Include="Content\themes\base\jquery.ui.resizable.css" />
+    <Content Include="Content\themes\base\jquery.ui.selectable.css" />
+    <Content Include="Content\themes\base\jquery.ui.slider.css" />
+    <Content Include="Content\themes\base\jquery.ui.spinner.css" />
+    <Content Include="Content\themes\base\jquery.ui.tabs.css" />
+    <Content Include="Content\themes\base\jquery.ui.theme.css" />
+    <Content Include="Content\themes\base\jquery.ui.tooltip.css" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\minified\jquery-ui.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.accordion.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.autocomplete.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.button.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.core.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.datepicker.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.dialog.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.menu.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.progressbar.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.resizable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.selectable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.spinner.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.tooltip.min.css" />
+    <Content Include="Convert_pdf1.aspx" />
+    <Content Include="crm_call1.aspx" />
+    <Content Include="crm_call3.aspx" />
+    <Content Include="emailPrint.asp" />
+    <Content Include="feedback.asp" />
+    <Content Include="get_crm.aspx" />
+    <Content Include="header.aspx" />
+    <Content Include="Images\accent.png" />
+    <Content Include="Images\bullet.png" />
+    <Content Include="Images\email_headerDatrix.jpg" />
+    <Content Include="Images\heroAccent.png" />
+    <Content Include="Images\orderedList0.png" />
+    <Content Include="Images\orderedList1.png" />
+    <Content Include="Images\orderedList2.png" />
+    <Content Include="Images\orderedList3.png" />
+    <Content Include="Images\orderedList4.png" />
+    <Content Include="Images\orderedList5.png" />
+    <Content Include="Images\orderedList6.png" />
+    <Content Include="Images\orderedList7.png" />
+    <Content Include="Images\orderedList8.png" />
+    <Content Include="Images\orderedList9.png" />
+    <Content Include="javasc_editor.aspx" />
+    <Content Include="make_pdf_html.asp" />
+    <Content Include="QuoteWerks\addeditCountry.asp" />
+    <Content Include="QuoteWerks\addQuoteComments.asp" />
+    <Content Include="QuoteWerks\Convert_pdf.aspx" />
+    <Content Include="QuoteWerks\country.asp" />
+    <Content Include="QuoteWerks\createPDF.aspx" />
+    <Content Include="QuoteWerks\create_image.aspx" />
+    <Content Include="QuoteWerks\create_pdf1.aspx" />
+    <Content Include="QuoteWerks\crm_call.aspx" />
+    <Content Include="QuoteWerks\crm_call_%40.aspx" />
+    <Content Include="QuoteWerks\crm_edit_Quote.aspx" />
+    <Content Include="QuoteWerks\generate_invoice.aspx" />
+    <Content Include="QuoteWerks\header1.aspx" />
+    <Content Include="QuoteWerks\images\button-next.png" />
+    <Content Include="QuoteWerks\images\email_headerDatrix.jpg" />
+    <Content Include="QuoteWerks\images\invoice.jpg" />
+    <Content Include="QuoteWerks\images\payment-receipt.jpg" />
+    <Content Include="QuoteWerks\images\po-received.jpg" />
+    <Content Include="QuoteWerks\InvoicegeneratedReport.asp" />
+    <Content Include="QuoteWerks\leftmenu.aspx" />
+    <Content Include="packages.config" />
+    <Content Include="QuoteWerks\css\calendar\images\Thumbs.db" />
+    <Content Include="QuoteWerks\edit_QuotegeneratedReport.asp" />
+    <Content Include="QuoteWerks\header.aspx" />
+    <Content Include="QuoteWerks\js\calendar\images\Thumbs.db" />
+    <Content Include="QuoteWerks\login.aspx" />
+    <Content Include="QuoteWerks\new_ship_edit.aspx" />
+    <Content Include="QuoteWerks\PaymentgeneratedReport.asp" />
+    <Content Include="QuoteWerks\POgeneratedReport.asp" />
+    <Content Include="QuoteWerks\Quote_accepted.asp" />
+    <Content Include="QuoteWerks\selectcountry.asp" />
+    <Content Include="QuoteWerks\SendInvoiceReport.asp" />
+    <Content Include="QuoteWerks\sendPOgeneratedReport.asp" />
+    <Content Include="QuoteWerks\send_mail.asp" />
+    <Content Include="QuoteWerks\send_mail1.asp" />
+    <Content Include="QuoteWerks\send_payment.asp" />
+    <Content Include="QuoteWerks\send_payment_mail.asp" />
+    <Content Include="QuoteWerks\send_payment_report.aspx" />
+    <Content Include="QuoteWerks\Update_oppurtunity.aspx" />
+    <Content Include="QuoteWerks\User_upload.aspx" />
+    <Content Include="QuoteWerks\verifylogin.aspx" />
+    <Content Include="QuoteWerks\viewQuoteComments.asp" />
+    <Content Include="QuoteWerks\view_edit_quote.asp" />
+    <Content Include="QuoteWerks\_notes\pdf_show.asp.mno" />
+    <Content Include="search_report1.asp" />
+    <Content Include="xyz_quote1.html" />
+    <Content Include="xyz_quote_div1.html" />
+    <None Include="Properties\PublishProfiles\quotewerks.pubxml" />
+    <Content Include="QuoteWerks\QW_PDF\AGILE.pdf" />
+    <Content Include="QuoteWerks\QW_PDF\APMP-5.pdf" />
+    <Content Include="QuoteWerks\QW_PDF\APMP4P2.pdf" />
+    <Content Include="QuoteWerks\QW_PDF\DTQQ1007.5-8.pdf" />
+    <Content Include="QuoteWerks\QW_PDF\ITILF.pdf" />
+    <Content Include="QuoteWerks\QW_PDF\ITILF2.pdf" />
+    <Content Include="QuoteWerks\QW_PDF\MSPF-3.pdf" />
+    <Content Include="QuoteWerks\QW_PDF\MSPFP-5.pdf" />
+    <Content Include="QuoteWerks\QW_PDF\MSPP-2.pdf" />
+    <Content Include="QuoteWerks\QW_PDF\P2F.pdf" />
+    <Content Include="QuoteWerks\QW_PDF\P2FP.pdf" />
+    <Content Include="QuoteWerks\QW_PDF\P2P.pdf" />
+    <Content Include="QuoteWerks\QW_PDF\P2R.pdf" />
+    <Content Include="QuoteWerks\QW_PDF\P2RP.pdf" />
+    <Content Include="QuoteWerks\QW_PDF\PMP.pdf" />
+    <Content Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </Content>
+    <None Include="Scripts\jquery-1.8.2.intellisense.js" />
+    <Content Include="QuoteWerks\addeditcompanydetails.asp" />
+    <Content Include="QuoteWerks\addeditUser.asp" />
+    <Content Include="QuoteWerks\addeditviewCategory.asp" />
+    <Content Include="QuoteWerks\addeditviewquote.asp" />
+    <Content Include="QuoteWerks\addeditviewquote1.asp" />
+    <Content Include="QuoteWerks\AspPDF\asppdf.dll" />
+    <Content Include="QuoteWerks\Category-Itemrecords.asp" />
+    <Content Include="QuoteWerks\Category-Items.asp" />
+    <Content Include="QuoteWerks\category.asp" />
+    <Content Include="QuoteWerks\changepassword.asp" />
+    <Content Include="QuoteWerks\changepwd.asp" />
+    <Content Include="QuoteWerks\ChangeshippingAddress.asp" />
+    <Content Include="QuoteWerks\companyDetails.asp" />
+    <Content Include="QuoteWerks\css\calendar\calendar.css" />
+    <Content Include="QuoteWerks\css\calendar\images\close.gif" />
+    <Content Include="QuoteWerks\css\calendar\images\close_over.gif" />
+    <Content Include="QuoteWerks\css\calendar\images\down.gif" />
+    <Content Include="QuoteWerks\css\calendar\images\down_over.gif" />
+    <Content Include="QuoteWerks\css\calendar\images\down_time.gif" />
+    <Content Include="QuoteWerks\css\calendar\images\down_time_over.gif" />
+    <Content Include="QuoteWerks\css\calendar\images\left.gif" />
+    <Content Include="QuoteWerks\css\calendar\images\left_over.gif" />
+    <Content Include="QuoteWerks\css\calendar\images\right.gif" />
+    <Content Include="QuoteWerks\css\calendar\images\right_over.gif" />
+    <Content Include="QuoteWerks\css\calendar\system.css" />
+    <Content Include="QuoteWerks\css\calendar\template.css" />
+    <Content Include="QuoteWerks\css\form.css" />
+    <Content Include="QuoteWerks\css\layout.css" />
+    <Content Include="QuoteWerks\css\leftNavi.css" />
+    <Content Include="QuoteWerks\css\login.css" />
+    <Content Include="QuoteWerks\css\mainContent.css" />
+    <Content Include="QuoteWerks\css\pagestyle.css" />
+    <Content Include="QuoteWerks\css\Styles.css" />
+    <Content Include="QuoteWerks\datrix-pdf.html" />
+    <Content Include="QuoteWerks\default.asp" />
+    <Content Include="QuoteWerks\Edit-Category-Item.asp" />
+    <Content Include="QuoteWerks\Edit-Category-Itemrecords.asp" />
+    <Content Include="QuoteWerks\Edit-Category-Itemrecords1.asp" />
+    <Content Include="QuoteWerks\edit_category_item1.asp" />
+    <Content Include="QuoteWerks\edit_company_details.asp" />
+    <Content Include="QuoteWerks\edit_generateQuote.asp" />
+    <Content Include="QuoteWerks\edit_getcompany_details.asp" />
+    <Content Include="QuoteWerks\edit_shipping_details.asp" />
+    <Content Include="QuoteWerks\edit_update_items.asp" />
+    <Content Include="QuoteWerks\edit_update_items1.asp" />
+    <Content Include="QuoteWerks\edit_update_items12.asp" />
+    <Content Include="QuoteWerks\edit_update_items21.asp" />
+    <Content Include="QuoteWerks\generateQuote.asp" />
+    <Content Include="QuoteWerks\generateReport.asp" />
+    <Content Include="QuoteWerks\getbillingDetails.asp" />
+    <Content Include="QuoteWerks\getcategories.asp" />
+    <Content Include="QuoteWerks\getcompanyDetails.asp" />
+    <Content Include="QuoteWerks\getdesp.asp" />
+    <Content Include="QuoteWerks\getfulldetails.asp" />
+    <Content Include="QuoteWerks\getshippingDetails.asp" />
+    <Content Include="QuoteWerks\get_comp_name.asp" />
+    <Content Include="QuoteWerks\home.asp" />
+    <Content Include="QuoteWerks\images\Banner.jpg" />
+    <Content Include="QuoteWerks\images\button.gif" />
+    <Content Include="QuoteWerks\images\Edusys.jpg" />
+    <Content Include="QuoteWerks\images\hoverArrow.gif" />
+    <Content Include="QuoteWerks\images\Login_bg.png" />
+    <Content Include="QuoteWerks\images\Login_button.png" />
+    <Content Include="QuoteWerks\images\Login_button_hover.png" />
+    <Content Include="QuoteWerks\images\logo.jpg" />
+    <Content Include="QuoteWerks\images\logotop.png" />
+    <Content Include="QuoteWerks\images\quote.jpg" />
+    <Content Include="QuoteWerks\includes\connection.asp" />
+    <Content Include="QuoteWerks\includes\connectionClose.asp" />
+    <Content Include="QuoteWerks\includes\header.asp" />
+    <Content Include="QuoteWerks\includes\LeftMenu.asp" />
+    <Content Include="QuoteWerks\includes\pagination.asp" />
+    <Content Include="QuoteWerks\Insertcompanydetails.asp" />
+    <Content Include="QuoteWerks\js\calendar\calendar-en.js" />
+    <Content Include="QuoteWerks\js\calendar\calendar.js" />
+    <Content Include="QuoteWerks\js\calendar\calendar1.js" />
+    <Content Include="QuoteWerks\js\calendar\images\close.gif" />
+    <Content Include="QuoteWerks\js\calendar\images\close_over.gif" />
+    <Content Include="QuoteWerks\js\calendar\images\down.gif" />
+    <Content Include="QuoteWerks\js\calendar\images\down_over.gif" />
+    <Content Include="QuoteWerks\js\calendar\images\down_time.gif" />
+    <Content Include="QuoteWerks\js\calendar\images\down_time_over.gif" />
+    <Content Include="QuoteWerks\js\calendar\images\left.gif" />
+    <Content Include="QuoteWerks\js\calendar\images\left_over.gif" />
+    <Content Include="QuoteWerks\js\calendar\images\right.gif" />
+    <Content Include="QuoteWerks\js\calendar\images\right_over.gif" />
+    <Content Include="QuoteWerks\js\calendar\zapatec.js" />
+    <Content Include="QuoteWerks\js\combo-class.js" />
+    <Content Include="QuoteWerks\js\combo-hotel.js" />
+    <Content Include="QuoteWerks\js\combo-website - Copy.js" />
+    <Content Include="QuoteWerks\js\combo-website.js" />
+    <Content Include="QuoteWerks\js\combo-website1.js" />
+    <Content Include="QuoteWerks\js\company.js" />
+    <Content Include="QuoteWerks\js\company1.js" />
+    <Content Include="QuoteWerks\js\get_category.js" />
+    <Content Include="QuoteWerks\js\jquery-1.7.1.min.js" />
+    <Content Include="QuoteWerks\js\pdfobject.js" />
+    <Content Include="QuoteWerks\js\pdfobject.min.js" />
+    <Content Include="QuoteWerks\login.asp" />
+    <Content Include="QuoteWerks\logout.asp" />
+    <Content Include="QuoteWerks\next_page.asp" />
+    <Content Include="QuoteWerks\query_s.asp" />
+    <Content Include="QuoteWerks\QuotegeneratedReport.asp" />
+    <Content Include="QuoteWerks\report.asp" />
+    <Content Include="QuoteWerks\shippingAddress.asp" />
+    <Content Include="QuoteWerks\update_items.asp" />
+    <Content Include="QuoteWerks\update_items1.asp" />
+    <Content Include="QuoteWerks\users.asp" />
+    <Content Include="QuoteWerks\validUser.asp" />
+    <Content Include="QuoteWerks\ViewEditcategory.asp" />
+    <Content Include="QuoteWerks\ViewEditQuote.asp" />
+    <Content Include="Scripts\jquery-1.8.2.js" />
+    <Content Include="Scripts\jquery-1.8.2.min.js" />
+    <Content Include="Scripts\jquery-ui-1.9.2.js" />
+    <Content Include="Scripts\jquery-ui-1.9.2.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\WebForms\DetailsView.js" />
+    <Content Include="Scripts\WebForms\Focus.js" />
+    <Content Include="Scripts\WebForms\GridView.js" />
+    <Content Include="Scripts\WebForms\Menu.js" />
+    <Content Include="Scripts\WebForms\MenuStandards.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjax.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxApplicationServices.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxComponentModel.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxCore.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxGlobalization.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxHistory.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxNetwork.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxSerialization.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxTimer.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxWebForms.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxWebServices.js" />
+    <Content Include="Scripts\WebForms\SmartNav.js" />
+    <Content Include="Scripts\WebForms\TreeView.js" />
+    <Content Include="Scripts\WebForms\WebForms.js" />
+    <Content Include="Scripts\WebForms\WebParts.js" />
+    <Content Include="Scripts\WebForms\WebUIValidation.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Default.aspx" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Service References\edusys\Organization.disco" />
+    <Content Include="Service References\edusys\configuration91.svcinfo" />
+    <Content Include="Service References\edusys\configuration.svcinfo" />
+    <Content Include="Service References\edusys\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </Content>
+    <Content Include="shipping_details.aspx" />
+    <Content Include="take_session.asp" />
+    <Content Include="uk.asp" />
+    <Content Include="User_pics.aspx" />
+    <Content Include="ViewSwitcher.ascx" />
+    <Content Include="Web.config" />
+    <Content Include="Bundle.config" />
+    <Content Include="Site.Mobile.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\AuthConfig.cs" />
+    <Compile Include="About.aspx.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="About.aspx.designer.cs">
+      <DependentUpon>About.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Manage.aspx.cs">
+      <DependentUpon>Manage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Manage.aspx.designer.cs">
+      <DependentUpon>Manage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\OpenAuthProviders.ascx.cs">
+      <DependentUpon>OpenAuthProviders.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\OpenAuthProviders.ascx.designer.cs">
+      <DependentUpon>OpenAuthProviders.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Account\RegisterExternalLogin.aspx.cs">
+      <DependentUpon>RegisterExternalLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Account\RegisterExternalLogin.aspx.designer.cs">
+      <DependentUpon>RegisterExternalLogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="call_crm8.aspx.cs">
+      <DependentUpon>call_crm8.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="call_crm8.aspx.designer.cs">
+      <DependentUpon>call_crm8.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Contact.aspx.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contact.aspx.designer.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Convert_pdf1.aspx.cs">
+      <DependentUpon>Convert_pdf1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="crm_call1.aspx.cs">
+      <DependentUpon>crm_call1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="crm_call1.aspx.designer.cs">
+      <DependentUpon>crm_call1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="crm_call3.aspx.cs">
+      <DependentUpon>crm_call3.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="crm_call3.aspx.designer.cs">
+      <DependentUpon>crm_call3.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="get_crm.aspx.cs">
+      <DependentUpon>get_crm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="get_crm.aspx.designer.cs">
+      <DependentUpon>get_crm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="header.aspx.cs">
+      <DependentUpon>header.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="header.aspx.designer.cs">
+      <DependentUpon>header.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HttpHelper.cs" />
+    <Compile Include="javasc_editor.aspx.cs">
+      <DependentUpon>javasc_editor.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="javasc_editor.aspx.designer.cs">
+      <DependentUpon>javasc_editor.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="QuoteWerks\Convert_pdf.aspx.cs">
+      <DependentUpon>Convert_pdf.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QuoteWerks\createPDF.aspx.cs">
+      <DependentUpon>createPDF.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QuoteWerks\createPDF.aspx.designer.cs">
+      <DependentUpon>createPDF.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="QuoteWerks\create_image.aspx.cs">
+      <DependentUpon>create_image.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QuoteWerks\create_image.aspx.designer.cs">
+      <DependentUpon>create_image.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="QuoteWerks\create_pdf1.aspx.cs">
+      <DependentUpon>create_pdf1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QuoteWerks\create_pdf1.aspx.designer.cs">
+      <DependentUpon>create_pdf1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="QuoteWerks\crm_call.aspx.cs">
+      <DependentUpon>crm_call.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QuoteWerks\crm_call.aspx.designer.cs">
+      <DependentUpon>crm_call.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="QuoteWerks\crm_call_%40.aspx.cs">
+      <DependentUpon>crm_call_%40.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QuoteWerks\crm_call_%40.aspx.designer.cs">
+      <DependentUpon>crm_call_%40.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="QuoteWerks\crm_edit_Quote.aspx.cs">
+      <DependentUpon>crm_edit_Quote.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QuoteWerks\crm_edit_Quote.aspx.designer.cs">
+      <DependentUpon>crm_edit_Quote.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="QuoteWerks\generate_invoice.aspx.cs">
+      <DependentUpon>generate_invoice.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QuoteWerks\generate_invoice.aspx.designer.cs">
+      <DependentUpon>generate_invoice.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="QuoteWerks\header1.aspx.cs">
+      <DependentUpon>header1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QuoteWerks\header1.aspx.designer.cs">
+      <DependentUpon>header1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="QuoteWerks\leftmenu.aspx.cs">
+      <DependentUpon>leftmenu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QuoteWerks\leftmenu.aspx.designer.cs">
+      <DependentUpon>leftmenu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QuoteWerks\header.aspx.cs">
+      <DependentUpon>header.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QuoteWerks\header.aspx.designer.cs">
+      <DependentUpon>header.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="QuoteWerks\HttpHelper.cs" />
+    <Compile Include="QuoteWerks\login.aspx.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QuoteWerks\login.aspx.designer.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="QuoteWerks\new_ship_edit.aspx.cs">
+      <DependentUpon>new_ship_edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QuoteWerks\new_ship_edit.aspx.designer.cs">
+      <DependentUpon>new_ship_edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="QuoteWerks\send_payment_report.aspx.cs">
+      <DependentUpon>send_payment_report.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QuoteWerks\send_payment_report.aspx.designer.cs">
+      <DependentUpon>send_payment_report.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="QuoteWerks\Update_oppurtunity.aspx.cs">
+      <DependentUpon>Update_oppurtunity.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QuoteWerks\Update_oppurtunity.aspx.designer.cs">
+      <DependentUpon>Update_oppurtunity.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="QuoteWerks\User_upload.aspx.cs">
+      <DependentUpon>User_upload.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QuoteWerks\User_upload.aspx.designer.cs">
+      <DependentUpon>User_upload.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="QuoteWerks\verifylogin.aspx.cs">
+      <DependentUpon>verifylogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="QuoteWerks\verifylogin.aspx.designer.cs">
+      <DependentUpon>verifylogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\edusys\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="shipping_details.aspx.cs">
+      <DependentUpon>shipping_details.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="shipping_details.aspx.designer.cs">
+      <DependentUpon>shipping_details.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Mobile.Master.cs">
+      <DependentUpon>Site.Mobile.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Mobile.Master.designer.cs">
+      <DependentUpon>Site.Mobile.Master</DependentUpon>
+    </Compile>
+    <Compile Include="User_pics.aspx.cs">
+      <DependentUpon>User_pics.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="User_pics.aspx.designer.cs">
+      <DependentUpon>User_pics.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ViewSwitcher.ascx.cs">
+      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewSwitcher.ascx.designer.cs">
+      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="QuoteWerks\bin\" />
+    <Folder Include="UserImage\" />
+    <Folder Include="UserSign\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Account\Web.config" />
+    <Content Include="Site.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Service References\edusys\Organization.wsdl" />
+    <Content Include="Service References\edusys\OrganizationService.wsdl" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\edusys\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:49170/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

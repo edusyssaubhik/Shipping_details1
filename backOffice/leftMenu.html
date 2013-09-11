@@ -1,0 +1,245 @@
+
+<%
+Session.Timeout=30
+%>
+<table border="0"  cellspacing="2" cellpadding="2" width="180px" >
+
+
+<!--Home page -->
+  <tr>
+    <td><a href="/backOffice/home.asp">Home</a></td>
+  </tr>
+  
+<% If session("brand")  <> "All" Then%>
+
+        <!--Update Price for both proj and datrix -->
+        <% If Session("UserId") = "priyanka" or Session("UserId") = "Dharshan" or Session("UserId") = "Anil" or Session("UserId") = "Ayan" or Session("UserId") = "Dharshan" or Session("UserId") = "Gregory " Then %>
+            
+            
+                          <tr>
+                            <td><a href="/backOffice/price.asp">Update Price</a></td>
+                          </tr>
+                          
+                          
+        <% End If %>
+  
+<% End If %>
+  
+<% If session("brand")  <> "All" Then%>
+ 
+  
+<!--Cities for both proj and datrix -->
+<% if session("typeofuser") = "Admin" OR Session("typeofuser") = "SeniorCSR" Then %>
+ 
+  <tr>
+    <td><a href="/backOffice/city.asp">Cities</a></td>
+  </tr>
+  
+<% End If %>
+
+  
+ 
+<!--Instructor for both proj and datrix -->
+<tr>
+    <td><a href="/backOffice/instructor.asp">Instructor</a></td>
+</tr>
+
+<% End If %>
+
+
+
+<!--PRINCE2 Courses for both proj and datrix -->
+<% If session("brand")  = "PROJstudy" Then%>
+  
+    <tr>
+    <td><a href="/backOffice/courses.asp">PRINCE2 Courses</a></td>
+  </tr>
+  
+<% ElseIf session("brand")  = "Datrix" Then %>
+
+    <tr>
+    <td><a href="/backOffice/courses.asp">Add Courses</a></td>
+  </tr>
+
+  
+<% ElseIf session("brand") = "All" Then %>
+
+    <tr>
+    <td><a href="/backOffice/courses.asp">Courses</a></td>
+  </tr>
+
+<%End If%>
+
+
+
+<% If session("brand")  <> "All" Then%>
+
+
+  
+        <!--PRINCE2 Live Class Exam Details for proj  -->  
+        <% If session("brand")  <> "Datrix" Then%>
+           
+               <% If Session("country") = "United Kingdom" Then %>
+                
+                <!--    <tr>
+                    <td><a href="/backOffice/examDetails.asp">PRINCE2 Live Class Exam Details</a></td>
+                  </tr>-->
+                  
+              <%End If%>
+              
+        <!--Payment Decline for proj  -->            
+                  <tr>
+                    <td><a href ="payDecline.asp" target="_blank">Payment Decline</a></td>
+                  </tr>
+          
+        <%End If%>
+
+
+            <!--ITIL Courses for both proj and datrix - for uk only  -->    
+            <%If Session("country") = "United Kingdom" Then%>
+              
+                  <% If session("brand")  <> "Datrix" Then%>
+              
+                          <tr>
+                            <td><a href="ITIL-courses.asp">PROJITIL Courses</a></td>
+                          </tr>          
+                    
+               
+                        <!--<tr>
+                        <td><a href="/backOffice/ITIL-examDetails.asp">ITIL Live Class Exam Details</a></td>
+                      </tr>
+                    -->
+                  <%End If%>
+            
+            <%End If%>
+			<!--ITIL Courses for both proj and datrix - for uk only -ends here  -->    
+
+
+
+
+            <!--PRINCE2 Live Class Exam Details for proj - for other than uk  --> 
+            <% If session("brand")  <> "Datrix" Then%>  
+             
+                <tr>
+                <td><a href="/backOffice/examDetails.asp">PRINCE2 Live Class Exam Details</a></td>
+              </tr>
+              
+    
+               <% If Session("country") = "United Kingdom" Then %>
+                   <tr>
+                <td><a href="projITIL-competitors.asp">ProjITIL Competitors</a></td>
+              </tr> 
+             <tr>
+                <td><a href="projITIL-facultyReport.asp">ProjITIL Feedbacks Module</a></td>
+              </tr> 
+              <%End If%>
+            
+               <tr>
+                <td><a href="competitors.asp">Competitors</a></td>
+              </tr> 
+              <tr>
+                <td><a href="facultyReport.asp">Feedback Module</a></td>
+              </tr> 
+              <tr>
+                <td><a href="feedback-Report.asp">Feedback Report</a></td>
+              </tr>
+             <tr>
+              <tr>
+                <td><a href="/backOffice/admin_ComplaintLog.asp">Complaint Log</a></td>
+              </tr>
+              <tr>
+                <td><a href="/backOffice/backOffLogistics.asp">Logistics</a></td>
+              </tr>
+               <tr>
+                <td><a href="/backOffice/referral-reports.asp" target="_blank">Referral Report</a></td>
+              </tr>
+               <% End If %>
+               
+ <% End If %> 
+ 
+ <% If session("brand")  <> "Datrix" Then%>              
+              
+               <% If Session("typeofuser") = "Admin" Then %>
+              <tr>
+                <td><a href="/backOffice/admin-user.asp">Admin Users</a></td>
+              </tr>
+              <% End If %>
+              <% If Session("typeofuser") = "Admin" Then %>
+              <tr>
+                <td><a href="/backOffice/user.asp">Users</a></td>
+              </tr>
+              <% End If %>
+ 
+<% End If %>             
+
+<% If session("brand")  <> "All"  Then%>
+
+<% If session("brand")  <> "Datrix" Then%>
+
+ 
+                 <% If Session("UserId") = "priyanka" or Session("UserId") = "Bharath" Then %>
+              <tr>
+                <td><a href ="countrydetails.asp">Country Details</a></td>
+              </tr>
+              <% End If %>
+               <tr>
+                <td><a href="classroom_feedback.asp" target="_blank">Add Classroom Feedbacks</a></td>
+              </tr>  
+              <tr>
+                <td><a href="online_feedback.asp" target="_blank">Add Online Feedbacks</a></td>
+              </tr>
+               <tr>
+                <td><a href="blendedCourse.asp">Blended course</a></td>
+              </tr>
+                <tr>
+                <td><a href="generateITIL.asp">Generate ITIL course</a></td>
+              </tr>
+             <tr>
+                <td><a href="enrolments.asp">Enrolments</a></td>
+              </tr>
+<% End If %>
+
+
+  <tr>
+    <td><a href ="terms_definition.asp">Terms Definition</a></td>
+  </tr>
+  
+ <% End If %>
+
+  
+  <% If Session("UserId") = "gregory" OR Session("UserId") = "pritam" OR Session("UserId") = "priyanka" OR Session("UserId") = "santosh" OR Session("UserId") = "Bharath" OR Session("UserId") = "kavitha" OR Session("UserId") = "savita" OR Session("UserId") = "gauravp" OR Session("UserId") = "amandeep" Then %>
+  <tr>
+    <td><a href ="locations.asp">Locations</a></td>
+  </tr>
+  <% End If %>
+  
+  <% If session("brand")  = "PROJstudy" Then%>
+
+    <tr>
+    <td><a href ="/adminupdatedb.asp" target="_blank">Adminupdatedb</a></td>
+  </tr>
+    <% End If %>
+
+  
+  <!--PRINCE2 Live Class Exam Details for proj - for other than uk  --> 
+<% If session("brand")  = "Datrix" Then%>  
+ <tr>
+    <td><a href ="staticCourse.asp">Add Static Course</a></td>
+  </tr>
+   <tr>
+    <td><a href ="courseContent.asp">Add content</a></td>
+  </tr>
+   <tr>
+    <td><a href="/Backoffice/Datrix-enrollment.asp" >Add Student Enrolment Details</a></td>
+  </tr>
+   
+    <tr>
+    <td><a href="http://www.projstudy.com/datrixPrepcourse/onlineCourse-Access.asp" target="_blank">PRINCE2 Pre-course Access</a></td>
+  </tr>
+  
+<%End If%>
+
+  <tr>
+    <td><a href="/backOffice/logout.asp">Logout</a></td>
+  </tr>
+</table>

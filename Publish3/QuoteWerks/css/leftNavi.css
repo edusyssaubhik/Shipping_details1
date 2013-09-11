@@ -1,0 +1,35 @@
+@charset "utf-8";
+/* CSS Document */
+
+.leftNavigation{
+	padding-left:15px;
+	padding-right:10px;
+	background-color:#fbfcf8;
+
+
+}
+.leftNavigation td {
+	height:29px;
+}
+.leftNavigation td a{
+	font-family:Arial, "Helvetica", sans-serif;
+	font-size:14px;
+	color:#606060;
+	text-decoration:none;
+	font-weight:100;
+}
+
+.leftNavigation a:hover{
+	color:#F15A22;
+	background-image: url(/QuoteWerks/images/hoverArrow.gif);
+	background-repeat: no-repeat;
+	background-position: right center;
+}
+
+#header a {
+	font-family:Arial, "Helvetica", sans-serif;
+	font-size:14px;
+	color:#000000;
+	text-decoration:none;
+	font-weight:100;
+}

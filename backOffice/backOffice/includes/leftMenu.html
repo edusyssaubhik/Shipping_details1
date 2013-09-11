@@ -1,0 +1,280 @@
+
+
+<table border="0"  cellspacing="2" cellpadding="2" width="280px" >
+
+
+<!--Home page -->
+  <tr>
+    <td><a href="/backOffice/home.asp">Home</a></td>
+  </tr>
+  
+  <tr>
+  <td><b> <% If session("brand")  = "Datrix"  Then%>
+  
+       Website Managment
+     
+  <% ElseIf session("brand")  = "PROJstudy" Then%>
+  
+  		Dynamic Content Managment
+  
+  <% End If %>
+  
+  </b>
+  
+  <ul class="leftUl">
+  
+<% If session("brand")  <> "All"  Then%>
+  
+          <% if session("typeofuser") = "Admin" OR Session("typeofuser") = "SeniorCSR" Then %>
+        
+          <li><a href="/backOffice/city.asp">Cities</a></li>
+          
+          <% End If %>
+          
+          <!--Instructor for both proj and datrix -->
+          <li><a href="/backOffice/instructor.asp">Instructor</a></li>
+          
+<%End If%>
+
+  
+ <!--PRINCE2 Courses for both proj and datrix -->
+<% If session("brand")  = "PROJstudy" Then%>
+  
+    <li><a href="/backOffice/courses.asp">Add / View PROJstudy PRINCE2 Classes</a></li>
+  
+<% ElseIf session("brand")  = "Datrix" Then %>
+
+   <li><a href="/backOffice/datrixClass.asp">Add / View Classes</a></li>
+
+  
+<% ElseIf session("brand") = "All" Then %>
+
+<!--    <li><a href="/backOffice/datrixClass.asp">View Classes</a></li>
+-->
+<%End If%>
+
+<% If session("brand")  = "PROJstudy" Then%>
+
+        <!--Update Price for both proj and datrix -->
+        <% If Session("UserId") = "priyanka" or Session("UserId") = "Dharshan" or Session("UserId") = "Anil" or Session("UserId") = "Ayan" or Session("UserId") = "Dharshan" or Session("UserId") = "Gregory " Then %>
+            
+            
+                         <li><a href="/backOffice/price.asp">Update Price</a></li>
+                          
+        <% End If %>
+  
+<% End If %>
+
+
+  <!--ITIL Courses for both proj and datrix - for uk only  -->    
+                 <%If Session("country") = "United Kingdom" Then%>
+                      
+                       <% If session("brand")  = "PROJstudy" Then%>
+                      
+                           <li><a href="ITIL-courses.asp">PROJstudy ITIL Classes</a></li>
+                                  
+                       <%End If%>
+                    
+                 <%End If%>
+
+
+<% If session("brand")  <> "All"  Then%>
+
+
+          <% If session("brand")  <> "Datrix" Then%>
+          
+          <li><a href ="terms_definition.asp">Terms Definition</a></li>
+          
+          <% End If %>
+        
+        
+          <% If Session("UserId") = "gregory" OR Session("UserId") = "Ayan" OR Session("UserId") = "priyanka" OR Session("UserId") = "santosh" OR Session("UserId") = "Bharath" OR Session("UserId") = "kavitha" OR Session("UserId") = "savita" OR Session("UserId") = "gauravp" OR Session("UserId") = "amandeep" Then %>
+          
+          
+          <li><a href ="locations.asp">Venue Details</a></li>
+          
+          <% End If %>
+          
+<% End If %>
+  
+  </ul>
+  </td>
+  </tr>
+  
+  <tr><td><b>
+  
+  <% If session("brand")  = "Datrix" Then%>
+  
+       Content Related Information
+     
+  <% ElseIf session("brand")  = "PROJstudy" Then%>
+  
+  		Student Related Information
+        
+  <% ElseIf session("brand")  = "All" Then%>
+  
+      Users
+  
+  <% End If %>
+  
+  </b>
+  
+   <ul class="leftUl">
+   
+  
+
+
+
+<% If session("brand")  <> "All" Then%>
+
+
+  
+                <!--PRINCE2 Live Class Exam Details for proj  -->  
+                <% If session("brand")  <> "Datrix" Then%>
+                              
+                <!--Payment Decline for proj  -->            
+                         <li><a href ="payDecline.asp" target="_blank">Payment Decline</a></li>
+                         
+                <%End If%>
+
+
+
+            		<!--PRINCE2 Live Class Exam Details for proj - for other than uk  --> 
+           	  <% If session("brand")  <> "Datrix" Then%>  
+             
+    
+                       <% If Session("country") = "United Kingdom" Then %>
+                         
+                          <li><a href="projITIL-facultyReport.asp">ProjITIL Feedbacks Module</a></li>
+                     
+                      <%End If%>
+            
+                   <li><a href="competitors.asp">Competitors</a></li>
+                   <li><a href="facultyReport.asp">Feedback Module</a></li>
+                   <li><a href="feedback-Report.asp">Feedback Report</a></li>
+                   <li><a href="/backOffice/admin_ComplaintLog.asp">Complaint Log</a></li>
+                 
+            <% End If %>
+               
+ <% End If %> 
+ 
+ <% If session("brand")  <> "Datrix" Then%>              
+              
+             <% If Session("typeofuser") = "Admin" Then %>
+             
+                <li><a href="/backOffice/admin-user.asp">Adminupdatedb Users</a></li>
+                
+             <% End If %>
+             
+             <% If Session("typeofuser") = "Admin" Then %>
+             
+                 <li><a href="/backOffice/user.asp">Backoffice Users</a></li>
+                 
+             <% End If %>
+ 
+<% End If %>             
+
+<% If session("brand")  <> "All"  Then%>
+
+<% If session("brand")  <> "Datrix" Then%>
+
+ 
+             <% If Session("UserId") = "priyanka" or Session("UserId") = "Bharath" Then %>
+             
+              <li><a href ="countrydetails.asp">Country Details</a></li>
+              
+             <% End If %>
+             
+                <li><a href="classroom_feedback.asp" target="_blank">Add Classroom Feedbacks</a></li>
+                
+                 <li><a href="online_feedback.asp" target="_blank">Add Online Feedbacks</a></li>
+                 
+                 <li><a href="blendedCourse.asp">Blended course</a></li>
+               
+             <li><a href="enrolments.asp">View Free Enrollments</a></li>
+             
+<% End If %>
+
+
+  
+  
+ <% End If %>
+
+
+
+  
+  <!--PRINCE2 Live Class Exam Details for proj - for other than uk  --> 
+<% If session("brand")  = "Datrix" Then%>  
+
+  <li><a href ="staticCourse.asp">Add Static Course</a></li>
+   <li><a href ="courseContent.asp">Add Static Course Description</a></li>
+   
+
+  
+<%End If%>
+  
+  </ul>
+  
+  </td></tr>
+  
+  <% If session("brand")  = "PROJstudy" Then%>
+  
+    <tr><td><b>Calls Management</b>
+  
+   <ul class="leftUl">
+  
+  <li><a href="/Globalbackoffice/home.asp" target="_blank">Calls Management</a></li>
+  <li><a href="http://www.projstudy.com/calls.asp" target="_blank">Add New Call</a></li>
+     </ul>
+     </td></tr>
+  <% End If %>
+
+  
+  <% If session("brand")  = "Datrix" Then%>
+  
+  <tr><td><b>Quote Management</b>
+  <ul class="leftUl">
+     <li><a href="http://www.projstudy.com/Quotewerks/home.asp" target="_blank">Quote Management</a></li>
+   </ul>
+  </td></tr>
+     
+  
+  <% End If %>
+  
+  
+    
+
+  
+  <% If session("brand")  = "All" Then%>
+  
+<tr><td><b>Online Customer Support</b>
+   <ul class="leftUl">
+     <li><a href ="/adminupdatedb.asp" target="_blank">Online Customer Support<br />[Email sending, Providing access to courses etc..]</a></li>
+     </ul>
+  </td></tr>
+  
+  <tr><td><b>Current Status</b>
+   <ul class="leftUl">
+    <li><a href="report.asp">PROJ and Datrix Report</a></li>
+      <% if session("typeofuser") = "Admin" Then %>
+     <li><a href ="https://docs.google.com/spreadsheet/ccc?key=0AsA0UXKPjzXMdHlIY1paS3h4ZnoyS2dEaDFQMXpnRVE&usp=sharing#gid=0" target="_blank">Website Erratta Document</a></li>
+     <% End If %>
+     <li><a href ="https://docs.google.com/spreadsheet/ccc?key=0AkDKvbS-9b_VdHFQR2t2WVAxZkNkLTJvTzhxM1pZM3c#gid=18" target="_blank">Logistics</a></li>
+      <% if session("typeofuser") = "Admin" Then %>
+      <li><a href ="https://docs.google.com/spreadsheet/ccc?key=0AvTBJ5n4_eNldFJaU1BFTm1JOVJ4b1prZ2NSNV9tVUE#gid=0" target="_blank">Daily Analytics  Projstudy & Datrix</a></li> 
+       <li><a href ="http://prince2study.com/documentaccess.asp" target="_blank">Quality procedures(Documents) and Courseware access</a></li>
+        <% End If %>
+       <li><a href ="https://docs.google.com/spreadsheet/ccc?key=0AhDtvZ5_3Lj4dGZxR3M3RGl3U1p6VFNpX2ZxaGdybXc&usp=sharing#gid=0" target="_blank">Managing Exam Bookings </a></li> 
+        <li><a href ="https://docs.google.com/spreadsheet/ccc?key=0AmMFoUejyFgudFp2U2dLZHU4X3VYbE9xVFhHSUtIR0E&usp=sharing#gid=0" target="_blank">Managing Exam Retakes </a></li>
+        <li><a href ="https://docs.google.com/spreadsheet/ccc?key=0AhzUFWffKwEIdDVBV29KYlZtQ0pkQzlKbnFnS2dMSkE&usp=sharing#gid=2 " target="_blank">Mailing Certificates </a></li>
+     </ul>
+     
+  </td></tr>
+  
+   <% End If %>
+  
+
+  <tr>
+    <td><a href="/backOffice/logout.asp">Logout</a></td>
+  </tr>
+</table>

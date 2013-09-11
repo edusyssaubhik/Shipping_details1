@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="a59a6dce-96b9-43b7-9358-0a0544a7167a" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="https://edusysglobalservices.api.crm5.dynamics.com/XRMServices/2011/Organization.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="Organization.wsdl" MetadataType="Wsdl" ID="4ea4a1c2-7565-42c5-8fd5-8781bbf0dddb" SourceId="1" SourceUrl="https://edusysglobalservices.api.crm5.dynamics.com/XRMServices/2011/Organization.svc?wsdl=wsdl0" />
+    <MetadataFile FileName="Organization.disco" MetadataType="Disco" ID="130d1102-a21c-4abc-bcb2-58b54bb64028" SourceId="1" SourceUrl="https://edusysglobalservices.api.crm5.dynamics.com/XRMServices/2011/Organization.svc?disco" />
+    <MetadataFile FileName="OrganizationService.wsdl" MetadataType="Wsdl" ID="051f4d6e-9c9c-4dfe-8cb9-db271e1946d3" SourceId="1" SourceUrl="https://edusysglobalservices.api.crm5.dynamics.com/XRMServices/2011/Organization.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

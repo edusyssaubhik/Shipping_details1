@@ -1,0 +1,146 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+p, h1, form, button{
+	border:0;
+	margin:0;
+	padding:0;
+	font-family: "Lucida Grande", "Lucida Sans Unicode", Verdana, Arial, Helvetica, sans-serif;
+}
+.spacer{clear:both; height:1px;}
+/* ----------- My Form ----------- */
+.myform{
+margin:0 auto;
+width:100%;
+    height: 24px;
+}
+
+/* ----------- stylized ----------- */
+#styledForm{
+font-family:"Lucida Grande", "Lucida Sans Unicode", Verdana, Arial, Helvetica, sans-serif;
+font-size:12px;	
+background-color:#fbfcf8;
+}
+#shipMain{
+font-family:"Arial", Helvetica, sans-serif;
+font-size:12px;	
+background-color:#fbfcf8;
+}
+#styledForm h1 {
+font-size:14px;
+font-weight:bold;
+margin-bottom:8px;
+}
+#styledForm p{
+font-size:11px;
+color:#666666;
+margin-bottom:10px;
+border-bottom:solid 1px #CCC;
+padding-bottom:10px;
+}
+#styledForm label{
+display:block;
+font-weight:bold;
+text-align:right;
+float:right;
+color:#333;
+}
+#styledForm .small{
+color:#666666;
+display:block;
+font-size:11px;
+font-weight:normal;
+text-align:right;
+width:150px;
+}
+
+#styledForm input{
+float:left;
+font-size:12px;
+padding:4px 2px;
+border:solid 1px #ccc;
+
+margin:2px 0 0px 10px;
+font-family:"Arial", Helvetica, sans-serif;
+}
+
+#styledForm textarea{
+float:left;
+font-size:12px;
+padding:4px 2px;
+border:solid 1px #ccc;
+
+margin:2px 0 0px 10px;
+font-family:"Arial", Helvetica, sans-serif;
+letter-spacing:1px;
+}
+
+#styledForm select{
+float:left;
+font-size:12px;
+border:solid 1px #ccc;
+width:200px;
+margin:2px 0 0px 10px;
+padding:2px;
+font-family:"Arial", Helvetica, sans-serif;
+}
+#styledForm option{
+background-color:#fbfcf8;
+}
+#styledForm input:focus, #styledForm select:focus, #styledForm textarea:focus{
+    background-color: #efffe0;
+	border-color:#7E9327;
+	}
+#styledForm1 button{
+clear:both;
+margin-left:10px;
+margin-top:146px;
+width:auto;
+height:31px;
+padding:0 10px;
+	color:#FFF;
+    background-color:#333;
+background-image:url(/QuoteWerks/images/button.gif);
+background-repeat:repeat-x;
+	border:none;
+	border-radius:8px;
+text-align:center;
+line-height:31px;
+
+font-size:11px;
+font-weight:bold;
+}
+
+
+#styledForm button{
+border-style: none;
+    border-color: inherit;
+    border-width: medium;
+    clear:both;
+    margin-left:10px;
+width:97px;
+    height:28px;
+background-image:url('/QuoteWerks/images/button.gif');
+    background-repeat:repeat-x;
+    text-align:center;
+    line-height:31px;
+    color:#FFFFFF;
+    font-size:11px;
+    font-weight:bold;
+    border-radius:8px;
+}
+#styledForm button:hover{
+	color:#b8eb30;
+	
+}
+
+#styledForm fieldset{
+	border:#ccc thin solid;
+	
+}
+#styledForm fieldset legend{ 
+color:#7E9327;
+margin-left:20px;
+font-weight:bold;
+font-family:Verdana, Geneva, "sans-serif";
+}
