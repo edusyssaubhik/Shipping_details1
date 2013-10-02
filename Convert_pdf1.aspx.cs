@@ -16,7 +16,7 @@ public partial class Convert_pdf1 : System.Web.UI.Page
 {
     bool snap = false;
     public string file;
-    public string action, quoteid, user;
+    public string action, quoteid,action_for, user,URL;
     protected void Page_Load(object sender, EventArgs e)
     {
        
@@ -26,20 +26,22 @@ public partial class Convert_pdf1 : System.Web.UI.Page
             action=Convert.ToString(Request.QueryString["action"]);
             quoteid = Convert.ToString(Request.QueryString["id"]);
             user = Convert.ToString(Request.QueryString["req"]);
-
+            action_for = Convert.ToString(Request.QueryString["c"]);
+          
         //    action=View_IS&id=142&req=Ayan
             //call Make_image() to create image
-            Make_image(action, quoteid, user);
+           
+            Make_image(action, quoteid, user, action_for);
         }
     }
 
-    public void Make_image(string action,string quoteid,string user)
+    public void Make_image(string action,string quoteid,string user, string action_for)
     {
        // string file = Request.QueryString["file"];
       //  string custid = Request.QueryString["custId"];
         //string invoiceno = Request.QueryString["invoiceno"];
    //     file =custid +"_"+ Request.QueryString["d"];
-        file = quoteid+"_"+action;
+       
         int width = 792; //Int32.Parse(200);
         int height = 612;//Int32.Parse(200);
         StringBuilder builder = new StringBuilder();
@@ -50,8 +52,19 @@ public partial class Convert_pdf1 : System.Web.UI.Page
        // string URL = "http://www.projstudy.com/onlineCoursesBO/html/" + file + ".html";
       //  string URL = "http://localhost:82/onlineCoursesBO/html/" + file + ".html"; ;
     //    string URL = "http://www.vmedu.com/onlinecoursesBO/showTransaction.asp?invoiceno="+invoiceno+"&CustID="+custid;
-        string URL = "http://46.183.10.241/Quotewerks/viewquotepdf.asp?action=" + action + "&id=" + quoteid + "&req=" + user;
-     //   string URL = "http://localhost:49170/Quotewerks/viewquotepdf.asp?action=" + action + "&id=" + quoteid + "&req=" + user;
+        if (Convert.ToString(action_for).ToString().Equals("credit"))
+        {
+            file = "DatrixQuote_" + quoteid + "_" + "ViewCRNote";
+            URL = "http://localhost:49170/Quotewerks/ViewCreditnotepdf.asp?action=" + action + "&id=" + quoteid + "&req=" + user;
+        }
+        else
+        {
+            file = "DatrixQuote_" + quoteid + "_" + action;
+            URL = "http://localhost:49170/Quotewerks/viewquotepdf.asp?action=" + action + "&id=" + quoteid + "&req=" + user;
+            // URL = "http://46.183.10.241/Quotewerks/viewquotepdf.asp?action=" + action + "&id=" + quoteid + "&req=" + user;
+        }
+       // Response.Write(URL);
+              //   string URL = "http://localhost:49170/Quotewerks/viewquotepdf.asp?action=" + action + "&id=" + quoteid + "&req=" + user;
        
         Thumbnail.Thumbnail thumbnail = new Thumbnail.Thumbnail(URL, 1089, 860, width, height, Thumbnail.Thumbnail.ThumbnailMethod.Url);
         Bitmap image = thumbnail.GenerateThumbnail();
