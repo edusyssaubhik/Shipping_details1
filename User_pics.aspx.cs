@@ -14,7 +14,7 @@ namespace Shipping_details1
         SqlConnection con=null;
         protected void Page_Load(object sender, EventArgs e)
         {
-            con = new SqlConnection("DATA SOURCE=db.winwinhosting.com;UID=apmgstudy;PWD=fIw4VdokuY2Lb0;DATABASE=apmgstudy");
+            con = new SqlConnection("DATA SOURCE=db.winwinhosting.com;UID=apmgstudy;PWD=4FvIZwDr3Ig7qz;DATABASE=apmgstudy");
             
             upload_image1=Request.QueryString["id"];
             
@@ -25,7 +25,7 @@ namespace Shipping_details1
         
         public string get_userid(string id)  // get information from previous quoteID
         {
-            con = new SqlConnection("DATA SOURCE=db.winwinhosting.com;UID=apmgstudy;PWD=fIw4VdokuY2Lb0;DATABASE=apmgstudy");
+            con = new SqlConnection("DATA SOURCE=db.winwinhosting.com;UID=apmgstudy;PWD=4FvIZwDr3Ig7qz;DATABASE=apmgstudy");
 
             SqlDataReader dr = null;
             string userid = "";
@@ -56,7 +56,7 @@ namespace Shipping_details1
             string userid="";
             if (FileUpload1.PostedFile.ContentLength > 0 && FileUpload2.PostedFile.ContentLength > 0)
             {
-            con = new SqlConnection("DATA SOURCE=db.winwinhosting.com;UID=apmgstudy;PWD=fIw4VdokuY2Lb0;DATABASE=apmgstudy");
+            con = new SqlConnection("DATA SOURCE=db.winwinhosting.com;UID=apmgstudy;PWD=4FvIZwDr3Ig7qz;DATABASE=apmgstudy");
                 if(action.Equals("V1"))
                 {
                     userid=upload_image1;
